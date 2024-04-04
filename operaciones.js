@@ -1,4 +1,4 @@
-const fs = require("fs");
+const fs = require("node:fs");
 
 const registrar = (nombre, edad, tipo, color, enfermedad) => {
   try {
