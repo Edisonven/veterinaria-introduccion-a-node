@@ -6,24 +6,17 @@ const registrar = (nombre, edad, tipo, color, enfermedad) => {
     animales.push({ nombre, edad, tipo, color, enfermedad });
     fs.writeFileSync("./citas.json", JSON.stringify(animales));
   } catch (error) {
-    console.log(error);
+    console.error("Error al escribir en el archivo:", error);
   }
 };
-
-/* registrar(nombre, edad, tipo, color, enfermedad); */
 
 const leer = () => {
   try {
     const leyendo = JSON.parse(fs.readFileSync("./citas.json", "utf-8"));
     console.log(leyendo);
   } catch (error) {
-    console.log(error);
+    console.error("Error al leer en el archivo:", error);
   }
 };
-
-leer();
-
-const data = process.argv.slice(2);
-console.log(data);
 
 module.exports = { leer, registrar };
