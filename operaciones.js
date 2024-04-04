@@ -10,7 +10,7 @@ const registrar = (nombre, edad, tipo, color, enfermedad) => {
   }
 };
 
-registrar("Kima", "2", "gato", "blanco y negro", "ninguna");
+/* registrar(nombre, edad, tipo, color, enfermedad); */
 
 const leer = () => {
   try {
@@ -22,5 +22,8 @@ const leer = () => {
 };
 
 leer();
+
+const data = process.argv.slice(2);
+console.log(data);
 
 module.exports = { leer, registrar };
