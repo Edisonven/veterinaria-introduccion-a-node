@@ -1,5 +1,26 @@
 const fs = require("fs");
 
-const registrar = () => {};
+const registrar = (nombre, edad, tipo, color, enfermedad) => {
+  try {
+    const animales = JSON.parse(fs.readFileSync("./citas.json", "utf-8"));
+    animales.push({ nombre, edad, tipo, color, enfermedad });
+    fs.writeFileSync("./citas.json", JSON.stringify(animales));
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-const leer = () => {};
+registrar("Kima", "2", "gato", "blanco y negro", "ninguna");
+
+const leer = () => {
+  try {
+    const leyendo = JSON.parse(fs.readFileSync("./citas.json", "utf-8"));
+    console.log(leyendo);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+leer();
+
+module.exports = { leer, registrar };
