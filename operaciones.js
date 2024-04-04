@@ -15,7 +15,7 @@ const leer = () => {
     const leyendo = JSON.parse(fs.readFileSync("./citas.json", "utf-8"));
     console.log(leyendo);
   } catch (error) {
-    console.error("Error al leer en el archivo:", error);
+    console.error("Error al leer el archivo:", error);
   }
 };
 
